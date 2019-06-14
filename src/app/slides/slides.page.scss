@@ -1,0 +1,30 @@
+.slides {
+    height: 100%;
+
+    ion-slide {
+        background-color: #F1F1F1;
+    }
+
+    .image-wrapper {
+        width: 100%;
+
+        .background {
+            width: 75%;
+            height: 20em;
+            background-color: #565454;
+            margin: auto;
+        }
+
+        h1 {
+            margin: 0.8em 0;
+        }
+        
+        p {
+            width: 85%;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #565454;
+        }
+    }
+}
+                

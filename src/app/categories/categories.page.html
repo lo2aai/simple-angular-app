@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+  <div class="left">
+    <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
+  </div>
+    <div class="right">
+      <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row class="first-row">
+    <ion-col>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat necessitatibus aliquam laboriosam sit animi nam reiciendis consequatur praesentium corrupti consequuntur eius et modi tenetur quo totam veritatis odit, illum accusamus?
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-wrapper">
+    <ion-col *ngFor="let categoryItem of categoryItems | slice:0:2" (click)="onClickHandler(categoryItem.name)" class="single-item" size="6">
+      <div>
+        <img src="{{ categoryItem.category_img }}" alt="">
+        <p>
+          {{categoryItem.name}}
+        </p>
+      </div> 
+    </ion-col>
+  </ion-row>
+      <div class="static">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus autem tempora unde et sapiente.
+        </p>
+      </div> 
+  <ion-row class="row-wrapper">
+    <ion-col *ngFor="let categoryItem of categoryItems | slice:2" (click)="onClickHandler(categoryItem.name)" class="single-item" size="6">
+      <div>
+        <img src="{{ categoryItem.category_img }}" alt="">
+        <p>
+          {{categoryItem.name}}
+        </p>
+      </div> 
+    </ion-col>
+    <!-- <ion-col (click)="onClickHandler('seafood')" class="left-fourth-row">
+      <div>
+        <p>
+          SeaFood
+        </p>
+      </div> 
+    </ion-col>
+    <ion-col (click)="onClickHandler('meats')" class="right-fourth-row">
+      <div>
+        <p>
+          Meats
+        </p>
+      </div> 
+    </ion-col> -->
+  </ion-row>
+
+</ion-grid>
+
+</ion-content>

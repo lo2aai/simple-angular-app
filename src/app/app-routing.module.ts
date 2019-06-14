@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: '', redirectTo: 'slides', pathMatch: 'full' },
+  { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
+  { path: 'categories', loadChildren: './categories/categories.module#CategoriesPageModule' },
+  { path: ':name', loadChildren: './products/products.module#ProductsPageModule' },
 ];
 
 @NgModule({

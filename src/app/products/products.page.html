@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="categories"></ion-back-button>
+      </ion-buttons>
+    <div class="left">
+      <p>{{ category.name }}</p>
+    </div>
+    <div class="right">
+      <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <div class="bg"></div>
+    </ion-row>
+    <ion-row class="buttons">
+      <ion-col>
+        <a href="#">Estwa2ya</a>
+      </ion-col>
+      <ion-col>
+        <a href="#">msh estwa2ya</a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="items-list">
+      <ion-col *ngFor="let product of category.products" class="item" size="6">
+        <div class="item-image">
+          <img src="{{ product.product_img }}" alt="">
+        </div>
+        <div class="item-details">
+          <p class="product-name">{{ product.name }}</p>
+          <p class="weight">{{ product.weight }}</p>
+          <p class="price">{{ product.price }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
