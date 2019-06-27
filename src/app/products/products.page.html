@@ -14,30 +14,86 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <div class="bg"></div>
-    </ion-row>
-    <ion-row class="buttons">
-      <ion-col>
-        <a href="#">Estwa2ya</a>
-      </ion-col>
-      <ion-col>
-        <a href="#">msh estwa2ya</a>
-      </ion-col>
-    </ion-row>
-    <ion-row class="items-list">
-      <ion-col *ngFor="let product of category.products" class="item" size="6">
-        <div class="item-image">
-          <img src="{{ product.product_img }}" alt="">
-        </div>
-        <div class="item-details">
-          <p class="product-name">{{ product.name }}</p>
-          <p class="weight">{{ product.weight }}</p>
-          <p class="price">{{ product.price }}</p>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
+  <div class="center" *ngIf="category === undefined; else elseBlock">Please Check Your Internet.
+      <div style="display: none;">
+        <ion-grid>
+          <ion-row>
+            <div class="bg">
+              <img src=" {{category.img}} " alt="">
+            </div>
+          </ion-row>
+          <ion-row class="tab">
+            <ion-col class="active">
+              <button>1</button>
+            </ion-col>
+            <ion-col>
+              <button class="tablinks">2</button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="items-list">
+            <ion-col *ngFor="let product of category.products" (click)="goToProductDetails(product);" class="item" size="6">
+              <div class="item-image">
+                <img src="{{ product.product_img }}" alt="">
+              </div>
+              <div class="item-details">
+                <p class="product-name">{{ product.name }}</p>
+                <p class="weight">{{ product.weight }}</p>
+                <p class="price">{{ product.price }}</p>
+              </div>
+              <div class="right-side">
+                <ion-icon name="add-circle"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="fixed-bottom-buttons">
+            <ion-col>
+              <p>Sort by</p> 
+            </ion-col>
+            <ion-col>
+              <p>Filter</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <ion-grid>
+        <ion-row>
+          <div class="bg">
+            <img src=" {{category.img}} " alt="">
+          </div>
+        </ion-row>
+        <ion-row class="tab">
+          <ion-col class="active">
+            <button>1</button>
+          </ion-col>
+          <ion-col>
+            <button class="tablinks">2</button>
+          </ion-col>
+        </ion-row>
+        <ion-row class="items-list">
+          <ion-col *ngFor="let product of category.products" (click)="goToProductDetails(product);" class="item" size="6">
+            <div class="item-image">
+              <img src="{{ product.product_img }}" alt="">
+            </div>
+            <div class="item-details">
+              <p class="product-name">{{ product.name }}</p>
+              <p class="weight">{{ product.weight }}</p>
+              <p class="price">{{ product.price }}</p>
+            </div>
+            <div class="right-side">
+              <ion-icon name="add-circle"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="fixed-bottom-buttons">
+          <ion-col>
+            <p>Sort by</p> 
+          </ion-col>
+          <ion-col>
+            <p>Filter</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ng-template>
 </ion-content>

@@ -15,72 +15,102 @@ ion-header {
     }
 }
 
+.center {
+    text-align: center;
+    margin: 18em auto;
+}
+
 ion-grid {
     padding: 0;
 
     ion-row {
         .bg {
-            background-color: gray;
-            height: 10em;
+
+            height: auto;
+            min-height: 10em;
             width: 100%;
         }
     }
 
-    .buttons {
-        border-bottom: 1px solid gray;
+    .tab {
+        overflow: hidden;
+        border-top: 1px solid #F1F1F1;
+        background-color: white;
+        text-align: center;
 
-        ion-col {
-            padding: 1em;
-            text-align: center;
-
-            a {
-                text-decoration: none;
-                border: none;
-                color: black;
-                margin: 0;
-                font-weight: bold;
-                background: white;
-            }
+        .active{
+            border-bottom: 1px solid #F86F6E;
         }
+
+        button {
+            background-color: inherit;
+            padding: 1em;
+            font-size: 17px;
+        }
+
+
     }
 
     .items-list {
         .item {
             width: 100%;
-            height: 14em;
+            height: auto;
             padding: 0;
-            border: 1px solid white;
+            border-top: 1px solid #F1F1F1;
+            border-right: 1px solid #F1F1F1;
+            border-bottom: 1px solid #F1F1F1;
 
             .item-image {
                 // background-color: gray;
-                height: 7em;
+                height: 8em;
                 width: 100%;
+                img {
+                    max-width: 100%;
+                    border: 0;
+                    height: 100%;
+                    width: 100%;
+                }
             }
 
             .item-details {
-                margin-top: 1.5em;
+                padding: 0.5em;
 
                 .product-name {
                     font-weight: bold;
-                    font-size: 1em;
+                    font-size: 1.25em;
                     margin: 0;
                 }
 
                 .weight {
                     font-weight: lighter;
-                    color: #D6D6D6;
+                    color:black;
                     font-size: 1em;
                     margin: 0;
                 }
 
                 .price {
                     font-weight: lighter;
-                    color: #D6D6D6;
+                    color:black;
                     font-size: 1em;
                     margin: 0;
                 }
 
             }
+            .right-side {
+                float: right;
+                padding: 0 0.5em;
+                color: #D5D5D5;
+                font-size: 1.5em;
+                margin-top: -1em;
+            }
         }
+    }
+    .fixed-bottom-buttons {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        background-color: #FC6667;
+        color: white;
+        width: 100%;
     }
 }

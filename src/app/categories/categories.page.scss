@@ -12,10 +12,16 @@ ion-toolbar {
 
 ion-grid {
     padding: 0;
+    .center{
+        text-align: center;
+        margin: 18em auto;
+    }
     .first-row {
         ion-col {
-            height: 10em;
-            background-color: gray;
+            height: 14.5em;
+            background-image: url("https://s3-media2.fl.yelpcdn.com/bphoto/CFo7kceKmePIhLg94nrjPw/l.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
             div {
                 color: white;
                 text-align: center;
@@ -31,17 +37,17 @@ ion-grid {
                 border: 1px solid #d6d6d6;
                 border-radius: 2%;
                 position: relative;
-                height: 9.1em;
+                height: 10.7em;
 
                 img {
                     max-width: 100%;
                     border: 0;
                     border-radius: 2%;
-                    
+                    height: 169px;
                 }
 
                 p {
-                    color: black;
+                    color: white;
                     margin: 0 0.2em;
                     font-weight: bold;
                     position: absolute;
@@ -68,11 +74,13 @@ ion-grid {
         }   
     }
             .static {
-                background-color: gray;
+                background-image: url("https://as2.ftcdn.net/jpg/02/53/17/17/500_F_253171753_zoHChmGd3Ci5m8RwtIA1EmI2jcYxICX7.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
                 border-radius: 2%;
-                    padding: 40px 20px;
-                    width: calc(100% - 10px);
-                    margin-left: 5px;
+                padding: 40px 20px;
+                width: calc(100% - 10px);
+                margin-left: 5px;
 
                 p {
                     color: white;

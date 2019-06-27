@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
   { path: 'categories', loadChildren: './categories/categories.module#CategoriesPageModule' },
   { path: ':name', loadChildren: './products/products.module#ProductsPageModule' },
+  { path: 'product-details/:id', loadChildren: './product-details/product-details.module#ProductDetailsPageModule' },
 ];
 
 @NgModule({

@@ -9,6 +9,8 @@ export class CategoryServiceService {
   baseUrl: string = "https://5bcce576cf2e850013874767.mockapi.io/task/";
   categories: any = [];
   products: any = [];
+  extras: any;
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,12 +27,19 @@ export class CategoryServiceService {
 
   getCategoryProducts(categories, categoryName) {
     this.products = categories.filter((category) => {
-      const lowerCasedCategoryName = category.name.toLowerCase(); 
+      const lowerCasedCategoryName = category.name.toLowerCase();
         if(lowerCasedCategoryName === categoryName) {
           return category;
         }
-      }).map(category => ({name: category.name, products: category.products}))
+    }).map(category => ({ name: category.name, img: category.category_img, products: category.products}))
       .reduce((arr) => arr);
     return this.products;
+  }
+  setExtras(product) {
+    this.extras = product;
+  }
+
+  getExtras() {
+    return this.extras;
   }
 }

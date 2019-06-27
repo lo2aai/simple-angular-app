@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>product-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="product-img">
+    <div>
+      <img src="{{ data.product_img }}" alt="">
+    </div>
+  </ion-row>
+  <ion-row class="product-info">
+    <h1>{{ data.name }}</h1>
+    <p>{{ data.price }}</p>
+    <p>{{ data.weight }}</p>
+  </ion-row>
+
+</ion-content>

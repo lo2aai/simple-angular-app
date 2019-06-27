@@ -12,10 +12,11 @@
 
 <ion-content>
 <ion-grid>
+  <div class="center" *ngIf="categoryItems === undefined || categoryItems.length == 0; else elseBlock">please check your internet.
+  <div style="display: none;">
   <ion-row class="first-row">
     <ion-col>
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat necessitatibus aliquam laboriosam sit animi nam reiciendis consequatur praesentium corrupti consequuntur eius et modi tenetur quo totam veritatis odit, illum accusamus?
       </div>
     </ion-col>
   </ion-row>
@@ -29,11 +30,8 @@
       </div> 
     </ion-col>
   </ion-row>
-      <div class="static">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus autem tempora unde et sapiente.
-        </p>
-      </div> 
+    <div class="static">
+    </div> 
   <ion-row class="row-wrapper">
     <ion-col *ngFor="let categoryItem of categoryItems | slice:2" (click)="onClickHandler(categoryItem.name)" class="single-item" size="6">
       <div>
@@ -43,21 +41,40 @@
         </p>
       </div> 
     </ion-col>
-    <!-- <ion-col (click)="onClickHandler('seafood')" class="left-fourth-row">
+  </ion-row>
+  </div>
+</div>
+  <ng-template #elseBlock>
+  <ion-row class="first-row">
+    <ion-col>
       <div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-wrapper">
+    <ion-col *ngFor="let categoryItem of categoryItems | slice:0:2" (click)="onClickHandler(categoryItem.name)" class="single-item" size="6">
+      <div>
+        <img src="{{ categoryItem.category_img }}" alt="">
         <p>
-          SeaFood
+          {{categoryItem.name}}
         </p>
       </div> 
     </ion-col>
-    <ion-col (click)="onClickHandler('meats')" class="right-fourth-row">
+  </ion-row>
+    <div class="static">
+    </div> 
+  <ion-row class="row-wrapper">
+    <ion-col *ngFor="let categoryItem of categoryItems | slice:2" (click)="onClickHandler(categoryItem.name)" class="single-item" size="6">
       <div>
+        <img src="{{ categoryItem.category_img }}" alt="">
         <p>
-          Meats
+          {{categoryItem.name}}
         </p>
       </div> 
-    </ion-col> -->
+    </ion-col>
   </ion-row>
+</ng-template>
+
 
 </ion-grid>
 
